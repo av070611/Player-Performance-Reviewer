@@ -1,0 +1,28 @@
+Uninterpreted data is converted into information by analyzing it.
+
+Derived Summary Statistics for teams, clubs, & players.
+
+Extensive football experience : -
+The insights provided in our results
+Along with understanding
+Contextualized information enables users to act smartly
+
+Analyzing the Dataset : -
+Data is scraped from sofifa website using python crawler.
+Dataset comprises every player featured in FIFA 18.
+Had 89 attributes from Player Name and Flag Images, Playing Position Data.
+Also includes Player style statistics like Dribbling, Aggression, GK Skills etc.
+And also player’s personal data like Nationality, Photo, Club, Age, Wage, Salary etc.
+
+To conclude the following points, EDA is used: -
+World statistics
+Clustering players by Nationality
+Value & Wages of players with age
+Value of players with position
+Overall & Potential with age
+Variation of overall & potential by country for top countries
+Correlation matrix - attributes vs potential and overall
+Variation in wages for top clubs
+Age vs overall clustered by field position
+Make your dream team
+Predicting playing position using player statistics

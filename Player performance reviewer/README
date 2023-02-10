@@ -26,3 +26,291 @@ Variation in wages for top clubs
 Age vs overall clustered by field position
 Make your dream team
 Predicting playing position using player statistics
+
+
+Data Cleaning
+Data cleaning is the process of detecting and correcting or removing the corrupt or inaccurate records from a record set, database, dataframe.
+Refers to identify the incomplete, incorrect and inaccurate or irrelevant parts of the data and then replacing, modifying or deleting the dirty or coarse data.
+Data cleaning is crucial and emphasized because wrong data can drive a business to wrong decisions, conclusions and pool analysis.
+Loading Basic Dependencies: -
+•	Numpy and Pandas for basic and dataframe manipulations.
+•	Seaborn and Matplotlib is used for visualisation.
+•	Missingno for missing values.
+•	Datetime for date time manipulation.
+•	Ipywidgets for interactivity.
+Background Styling: -
+•	plt.style.use
+Importing the Dataset: -
+•	read_csv
+•	Use pd.read_csv(‘data.csv’) to read the data
+•	To check the number of rows and columns use the data.shape function
+•	To know about the data columns header use the data.column function
+•	To get the first 5 rows from the data we use the data.head function
+Data for numerical columns: -
+•	To return the statistical information like mean, std
+•	Use data.iloc[:,2:].describe() to return the statistical information about the data
+•	To set the style, we are using style.background_gradient(cmap=’cividis’)
+Categorical Data: -
+Use data.iloc[:,13:].describe(include=’object’) to describe the categorical data.
+Starting with Data Cleaning: -
+•	To visualize the Null values use mno.bar(data.iloc[:, :40],color = 'orange',sort = 'ascending').
+•	To set the title use the plt.title function and to show the plot use the plt.show function.
+Infer from the plot that has the maximum missing values, followed by LM, LS , ST, RS, LW , RAM , CF, RF, RW, LAM, CAM , LF, JOINED, CONTRACT VALID UNTIL , CLUB and Position.
+Checking the missing values for the second half of the data.
+For that, use the same function mno.bar(data.iloc[:,40:])
+Imputing Null Values: -
+•	Mean
+•	Mode
+•	Median
+•	Use the fillna function to fill the missing values.
+•	To replace the missing values in numerical columns use mean function.
+•	To replace missing values from the categorical columns mode function.
+•	inplace=’True’ directly replaces the values without creating a copy.
+“data.isnull.sum.sum” to check that any null value left in the dataset after imputing the missing values.
+
+
+Feature Engineering:-
+Feature engineering is the process of using domain knowledge to extract features from raw data via data mining techniques.
+
+Good features allow you to represent the underlying structure of the data in the most accurate manner.
+
+Features can be used to improve the performance of machine learning algorithms. Feature engineering can be considered as machine learning itself.
+
+Ways to perform Feature Engineering: -
+
+Aggregating the features
+Binning the features
+Extracting Information from the features
+Defending Feature: -
+
+Averaging the values from marking
+Standing tackle
+Sliding tackle option
+General Feature: -
+
+HeadingAccuracy
+Dribbling
+Curve
+Ballcontrol
+Types of Features: -
+
+Mental Feature which return the average of aggression, interceptions, positioning, vision and composure values.
+Passing Feature would return the Mean of Crossing, Shortpassing and Longpassing Values.
+Acceleration, spritnspeed , agility and reactions defines the mobility of an individual
+Balance, jumping , stamina and strength are the power features.
+Rating function will return the mean of these values.
+Shooting feature will help you conclude the shooting ability of a player.
+Shooting Attributes: -
+
+Finishing
+Volleys
+Fkaccuracy
+Shotpower
+Longshots
+Penalties
+
+Adding Features to the Dataset: -
+
+Had already created the function to make new features.
+Adding Features by using apply function.
+Checking the column using the command data.columns.
+
+DATA VISUALIZATION
+Subplot is a function which allows us to divide a plot based on rows and columns.
+
+The subplot function has three parameters: -
+
+First parameter is the no. of rows you want for your plot.
+Second plot is for the no. of columns for your plot
+Third parameter is used to specify the position of the plot.
+Skills Observed: -
+
+Defending
+Passing
+Mobility
+Shooting
+Observing Preferred Foot for the Player using Countplot function: 
+
+sns.countplot
+Inferred that most players prefer their right foot.
+
+Checking the distribution for the international reputations for the players:-
+
+Using the plt.pie function from the matplotlib.pyplot library to plot the pie chart.
+Inferred that few players have 5 star international reputation ratings.
+Analyzing the list of the players who have 5 star international reputation ratings: -
+Columns selected to analyze: -
+                                          1.Name
+
+                                           2.Country
+
+                                           3.Overall rating
+
+
+
+Using the sort_values function to sort the players according to their overall scores.
+
+Observed: -
+
+L Messi, Cristiano Rolando and Neymar Jr are three Famous Players in the World.
+
+Weak foot distribution: -
+
+pie.plt
+
+Using this function again to plot the chart.
+
+Most of the players have weak foot with ratings as 5.
+
+Comparisons between positions and players: -
+
+sns.countplot
+
+To use the seaborn count plot, use the function available in the above line.
+
+You will infer that most of the players play for the striker and goalkeeper positions.
+
+Distribution of the player’s weight: -
+
+Using the seaborn’s distribution function to plot.
+
+You will Infer that players have weight around 150 to 175 lbs.
+
+Distribution of values and wages: -
+
+Using the distplot
+
+You will build a “extract value from” function to replace the euro symbol and convert the K and M to their respective values.
+
+You will infer that there are very few players which have a high value and similarly only few players are paid very high.
+
+Visualize the skill moves: -
+
+sns.countplot
+
+A count plot is a graphical display to show the number of occurrences or frequency for each categorical data using bars.
+
+Visualize the different work rate: -
+
+sns.countplot
+
+You will infer that work rate is medium for maximum players.
+
+Player’s potential and overall scores: -
+
+You will infer that the maximum player has a high potential range from 65 to 75.
+
+Also the overall score is in the range 60 to 70 for most of the players.
+
+Overall scores and age comparison: -
+
+Boxplot are usually the standardized way to display the distribution of data.
+
+You will Infer that the overall score is high and distributed from the age 22 to 28 with preferred foot as right.
+
+Visualizing most popular countries: -
+
+Germany
+
+England
+
+Visualize the distribution of weights: -
+
+sns.violinplot
+
+Italy has the maximum range for weight distribution.
+
+Visualizing distribution of overall scores and popular countries: -
+
+Using Barplot function - sns.barplot function to plot such distribution.
+
+You will infer that brazil and Spain has the maximum highest overall score valued players.
+
+Distribution of wages: -
+
+sns.barplot function
+
+Inferred that the players from Brazil and Spain have higher average salaries compared to other popular countries.
+
+Distribution of international reputation: -
+
+You will infer that players from Spain have a higher international reputation.
+
+Distribution of overall score in different popular clubs: -
+
+Using the boxplot function - sns.boxplot
+
+Inferred that Chelsea and Real Madrid have the highest overall distribution score which is around 75-85.
+
+Visualizing the ages in some popular clubs: -
+
+sns.boxplot
+
+Chelsea has the maximum age distribution than any other clubs.
+
+Distribution of wages in some popular clubs: -
+
+Again Using Boxplot Function.
+
+Real Madrid, FC Barcelona and Chelsea have a higher wage distribution.
+
+Visualizing the distribution of international reputation: -
+
+Inferred that FC Barcelona has the maximum international reputation than any other popular clubs.
+
+Analyzing the ball control and dribbling of FIFA players: -
+
+Going to use the LM plot.
+
+Most of the players who preferred their right foot have more ball control over dribbling compared to players who preferred their left foot.
+
+Starting with best players: -
+
+Age
+Club
+Nationality based on their overall scores
+To query and extract the relevant information use the data.iloc and data.groupby function.
+
+Groupby() function is used to split the data into groups based on some criteria.
+
+Data.iloc is the indexer function for Pandas Dataframe which is used for integer-location based indexing or selection by position.
+
+And the idxmax function returns the index of the first occurrence of maximum over requested axis.
+
+Result: -
+
+According to the overall scores Cristiano Ronaldo and Lionel Messi are the Best Players.
+
+Analyzing the best players for each skill: -
+
+Using the interactive method to return the best players for each skill.
+
+Finding out the top 15 players for each country: -
+
+Using the interactive ipython method to return the top 15 players from each country.
+
+Sterling as the best players.
+
+Finding top 15 players from each club: -
+
+Again use the interactive python method for this query.
+
+Lionel Messi is the top player with highest value and highest wage.
+
+Visualizing youngest players playing for FIFA2019: -
+
+Geubbels and Taoui are the best young players and both are from France playing for different clubs.
+
+Visualizing 15 oldest players: -
+
+Pérez, who is 45 years of age , plays for Mexico. O. Pérez has a very good overall score compared to other older players.
+
+Finding player having maximum playing tenure for the club: -
+
+Concluded that O Perez has spent almost 30 years playing for his club Pachuca.
+
+Check the membership of players from most of the popular clubs: -
+
+Lionel Messi comes out to be the oldest member of the club with 15 years of membership.
+
+In the next video, you will see the major learnings of this project.
